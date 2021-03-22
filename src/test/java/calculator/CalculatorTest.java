@@ -74,4 +74,11 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("delimitersOfAnyLenght")
+    void delimitersOfAnyLenght() {
+
+        assertEquals(6, calculator.add("//[***]\n1***2***3"));
+
+    }
 }

@@ -9,7 +9,7 @@ public class Calculator {
         StringBuilder negativeNumbers = new StringBuilder();
         boolean containsNegativeNumbers = false;
 
-        String[] arrayNumbers = numbers.split("[/\n;,]");
+        String[] arrayNumbers = numbers.split("[/\n;,\\[\\]*]");
 
         for (String arrayNumber : arrayNumbers) {
 
