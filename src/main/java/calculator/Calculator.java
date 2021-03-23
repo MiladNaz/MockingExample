@@ -1,6 +1,5 @@
 package calculator;
 
-
 public class Calculator {
 
     public int add(String numbers) {
@@ -9,7 +8,7 @@ public class Calculator {
         StringBuilder negativeNumbers = new StringBuilder();
         boolean containsNegativeNumbers = false;
 
-        String[] arrayNumbers = numbers.split("[/\n;,\\[\\]*%]");
+        String[] arrayNumbers = numbers.split("[^0-9-]");
 
         for (String arrayNumber : arrayNumbers) {
 
