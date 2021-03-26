@@ -19,8 +19,8 @@ public class InMemoryVersionOfEmployeeRepository implements EmployeeRepository {
     public Employee save(Employee e) {
         if (e.getId().equals("0")) {
             e.setId((String.valueOf(employees.size() + 1)));
-
         }
+
         for (Employee employee : employees)
             if (e.getId().equals(employee.getId())) {
                 employee.setSalary(e.getSalary());

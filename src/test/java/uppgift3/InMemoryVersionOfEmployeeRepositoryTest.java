@@ -16,6 +16,7 @@ class InMemoryVersionOfEmployeeRepositoryTest {
     void hasSavedEmployee() {
 
         Employee employee = new Employee("1", 2000);
+
         inMemoryVersionOfEmployeeRepository.save(employee);
 
         assertEquals(1, inMemoryVersionOfEmployeeRepository.findAll().size());
@@ -25,13 +26,15 @@ class InMemoryVersionOfEmployeeRepositoryTest {
     @Test
     @DisplayName("Overwriting employee")
     void overwritingEmployee() {
-
+        //Arrange
         Employee employee1 = new Employee("1", 2000);
         Employee employee2 = new Employee("1", 3000);
         inMemoryVersionOfEmployeeRepository.save(employee1);
 
+        //Act
         inMemoryVersionOfEmployeeRepository.save(employee2);
 
+        //Assert
         assertEquals(1, inMemoryVersionOfEmployeeRepository.findAll().size());
         assertEquals(3000, inMemoryVersionOfEmployeeRepository.findAll().get(0).getSalary());
 
@@ -40,7 +43,6 @@ class InMemoryVersionOfEmployeeRepositoryTest {
     @Test
     @DisplayName("Adding employee with no id")
     void addingEmployeeWithNoId() {
-
         Employee employee = new Employee("0", 2000);
 
         inMemoryVersionOfEmployeeRepository.save(employee);

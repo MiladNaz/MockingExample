@@ -41,5 +41,4 @@ class EmployeeManagerTest {
         assertFalse(employee.isPaid());
 
     }
-
 }
